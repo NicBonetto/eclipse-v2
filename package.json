@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --file ./test/globals.js --recursive -w -R nyan ./test/tests/**",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,16 @@
   },
   "homepage": "https://github.com/NicBonetto/eclipse-v2#readme",
   "devDependencies": {
-    "semistandard": "^16.0.1"
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^10.1.0",
+    "rewire": "^6.0.0",
+    "semistandard": "^16.0.1",
+    "sinon": "^14.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "spotify-web-api-node": "^5.0.2"
   }
 }
