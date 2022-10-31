@@ -29,7 +29,7 @@ export default function({ suggestions }) {
     return (
       <ul className="list">
         {
-          suggestions.map( ( suggestion, i ) => {
+          [ ...new Set( suggestions ) ].map( ( suggestion, i ) => {
             return <li
               key={ i }
               className="list-item"
