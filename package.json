@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --file ./test/globals.js --recursive -w -R nyan ./test/tests/**",
-    "start": "node index.js"
+    "dev": "vite & nodemon index.js",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -24,16 +25,23 @@
   },
   "homepage": "https://github.com/NicBonetto/eclipse-v2#readme",
   "devDependencies": {
+    "@vitejs/plugin-react": "^2.2.0",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
     "rewire": "^6.0.0",
+    "sass": "^1.55.0",
     "semistandard": "^16.0.1",
-    "sinon": "^14.0.1"
+    "sinon": "^14.0.1",
+    "vite": "^3.2.1"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2",
     "spotify-web-api-node": "^5.0.2"
   }
 }
