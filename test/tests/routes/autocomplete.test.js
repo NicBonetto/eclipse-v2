@@ -59,22 +59,4 @@ describe( 'lib/routes/spotify/autocomplete', () => {
       revert();
   });
 
-  it( 'should return the error', async() => {
-    const spotifyStub = {
-        searchArtists: sinon.stub().rejects('boom')
-      };
-  
-      const revert = autocomplete.__set__( 'spotify', spotifyStub );
-  
-      const res = await autocomplete(
-        { params: { artist: 'Bob' } },
-        { json: ( data ) => data }
-      );
-  
-      assert.equal( res, 'boom' );
-      sinon.assert.calledWith( spotifyStub.searchArtists, 'Bob' );
-  
-      revert();
-  });
-
 });

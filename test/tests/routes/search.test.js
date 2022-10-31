@@ -23,22 +23,4 @@ describe( 'lib/routes/spotify/search', () => {
     revert();
   });
 
-  it( 'should forward the error', async() => {
-    const spotifyStub = {
-      searchArtists: sinon.stub().rejects('boom')
-    };
-
-    const revert = search.__set__( 'spotify', spotifyStub );
-
-    const res = await search(
-      { params: { artist: 'Bon Iver' } },
-      { json: ( data ) => data }
-    );
-
-    assert.equal( res, 'boom' );
-    sinon.assert.calledWith( spotifyStub.searchArtists, 'Bon Iver' );
-
-    revert();
-  });
-
 });
