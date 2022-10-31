@@ -1,4 +1,5 @@
 import NavBar from '../shared/navbar';
+import Search from './searchbar';
 
 export default function() {
   return (
@@ -15,6 +16,7 @@ export default function() {
             <h5>Enter an artist's name:</h5>
           </div>
         </section>
+        <Search/>
       </div>
     </div>
   );
