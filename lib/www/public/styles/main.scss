@@ -63,3 +63,53 @@ html, body {
   letter-spacing: 1px;
   font-size: 30px;
 }
+
+.search {
+  color: rgba(162, 167, 171, 1);
+  background: none;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 320px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(162, 167, 171, 1);
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ .bar:before {
+    width: 320px;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.list {
+  max-height: 245px;
+  overflow: auto;
+  padding: 0;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  background-color: white;
+  border-top: none;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.list-item {
+  font-family: 'monospace', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  padding: 5px;
+  &:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+  }
+}

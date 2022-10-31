@@ -34,22 +34,4 @@ describe( 'lib/routes/spotify/recommended', async() => {
     revert();
   });
 
-  it( 'should forward the error', async() => {
-    const spotifyStub = {
-      getArtistRelatedArtists: sinon.stub().rejects('boom')
-    };
-
-    const revert = recommended.__set__( 'spotify', spotifyStub );
-
-    const res = await recommended(
-      { params: { id: 'xxxxxxxxxx' } },
-      { json: ( data ) => data }
-    );
-
-    assert.equal( res, 'boom' );
-    sinon.assert.calledWith( spotifyStub.getArtistRelatedArtists, 'xxxxxxxxxx' );
-
-    revert();
-  })
-
 });
